@@ -2,7 +2,7 @@
 
 # This script raises an error based on 
 # user-supplied command line argument
-
+import os
 import sys
 
 def print_usage():
@@ -21,25 +21,28 @@ if len(sys.argv) != 2:
 error_type = sys.argv[1]
 
 if error_type == "assertion":
-    raise AssertionError
+    assert 2*4==12
 elif error_type == "io":
-    raise IOError
+    open("aintnuthinhere")
 elif error_type == "import":
-    raise ImportError
+    import asdfghjkl;
 elif error_type == "index":
-    raise IndexError
+    swoop = "shmoop"
+    boop = swoop[42]
 elif error_type == "key":
-    raise KeyError
+    shmoop = {"x" : 1, "y" : 2}
+    print shmoop[42]
 elif error_type == "name":
-    raise NameError
+    assert boop(bloop) == nope
 elif error_type == "os":
-    raise OSError
+    for i in range(42):
+        print i, os.ttyname(i)
 elif error_type == "type":
-    raise TypeError
+    print "whaaaat"^2
 elif error_type == "value":
-    raise ValueError
+    print(int("whyyyyyyyyyyyyyyyyyyyy"))
 elif error_type == "zerodivision":
-    raise ZeroDivisionError
+    print 42/0 
 else:
     sys.stderr.write("Sorry, not able to throw a(n) ")
     sys.stderr.write(error_type + " error\n")
