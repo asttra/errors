@@ -6,7 +6,9 @@ import os
 import sys
 import argparse
 
-available_errors = ["assertion", "io", "import", "index", "key", "name", "os", "type", "value", "zerodivision"]
+available_errors = ["assertion", "io", "import", "index",
+                    "key", "name", "os", "type", "value",
+                    "zerodivision"]
 parser = argparse.ArgumentParser()
 parser.add_argument("error_type", choices=available_errors)
 args = parser.parse_args()
